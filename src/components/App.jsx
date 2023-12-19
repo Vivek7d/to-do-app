@@ -20,17 +20,24 @@ function App(){
         setItem({task:""})
         event.preventDefault();
     }
+    function handleDelete(index){
+        setList(prevList=>prevList.filter((_, i) => i !== index))
+    }
     return(
         <div className="container">
             <div className="card">
                 <h1>To-Do List</h1>
                 <form>
                     <input onChange={handleChange} type="text" name="task"/>
-                    <button onClick={handleClick}>Add</button>
+                    <button onClick={handleClick}>Add +</button>
                 </form>
                 <div className="listContainer">
                     <ul>
-                    {list.map((task,index)=>(<li key={index}>{task}</li>))}
+                    {list.map((task,index)=>(
+                        <li key={index}>{task}
+                        <button className="btn" onClick={() => handleDelete(index) }> X </button>
+                        </li>
+                        ))}
                     </ul>
                 </div>
             </div>
