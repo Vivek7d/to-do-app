@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+  color: #0f172a;
+}
+body {
+  background-color: #fef9c3;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
+.card {
+  width: 300px;
+  height: auto;
+  overflow: hidden;
+}
+.card h1 {
+  text-align: center;
+  color: #0f172a;
+  transform: rotate(2deg);
+  padding: 0.2rem 1.2rem;
+  border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
+  background-color: #fde047;
+  font-size: 1.5rem;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+form input{
+    background-color: none;
+    margin-right: 10px;
+    border-radius: 5px;
+    border-bottom: 1px dashed brown;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background-color: #fef9c3;
+    padding-right: 2px;
+    font-size: 18px;
+    margin-left: 5px;
+}
+form button{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #fef08a ;
+    border: 1px solid black;
+}
+form button:hover{
+    background-color:  #facc15;
+}
+.listContainer{
+    width: 100%;
+  height: auto;
+  min-height:300px;
+  max-width: 300px;
+  min-width: 250px;
+  background: #f1f5f8;
+  background-image: radial-gradient(#bfc0c1 7.2%, transparent 0);
+  background-size: 25px 25px;
+  border-radius: 20px;
+  padding: 1rem;
+  box-sizing: border-box;
+  margin-top: 50px;
+}
+.listContainer ul {
+    list-style-type: disc; 
+    padding: 10px;
+    font-size: larger;
+    
+  }
+  .listContainer ul li{
+    padding-top: 10px;
+  }
+  
+  .listContainer li {
+    margin-left: 1.5em; /* Adjust as needed */
+  }
+
+  @media (max-width:100) {
+    
+  }
