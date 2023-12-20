@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import ToDoItem from "./ToDoItem";
 
 function App(){
     const[item,setItem]= useState("")
@@ -12,8 +13,14 @@ function App(){
         setItem("")
         event.preventDefault();
     }
-    function handleDelete(index){
-        setList(prevList=>prevList.filter((_, i) => i !== index));
+    function deleteItem(id){
+        setList(prevValue=>{
+            return prevValue.filter(
+                (items,index)=>{
+                    return index !==id
+                }
+            )
+        });
     }
     return(
         <div className="container">
@@ -26,9 +33,11 @@ function App(){
                 <div className="listContainer">
                     <ul>
                     {list.map((task,index)=>(
-                        <li key={index}>{task}
-                        <button className="btn" onClick={() => handleDelete(index) }> X </button>
-                        </li>
+                        <ToDoItem key={index}
+                            id={index}
+                            onChecked={deleteItem}
+                            task={task}
+                        />
                         ))}
                     </ul>
                 </div>
