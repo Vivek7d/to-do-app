@@ -1,18 +1,16 @@
 import React,{useState} from "react";
 import ToDoItem from "./ToDoItem";
+import InputArea from "./InputArea";
 
 function App(){
-    const[item,setItem]= useState("")
     const[list,setList]=useState([])
-    function handleChange(event){
-        const newValue=event.target.value
-        setItem(newValue);
-    }
-    function handleClick(event){
-        setList(prevList=>[...prevList,item]);
-        setItem("")
-        event.preventDefault();
-    }
+    
+    function handleClick(items){
+        setList((prevList)=>{
+            return[...prevList,items];
+        })
+    }   
+   
     function deleteItem(id){
         setList(prevValue=>{
             return prevValue.filter(
@@ -27,8 +25,8 @@ function App(){
             <div className="card">
                 <h1>To-Do List</h1>
                 <form>
-                    <input onChange={handleChange} type="text" value={item} />
-                    <button onClick={handleClick}>Add +</button>
+                <InputArea onAdd={handleClick} />
+                    
                 </form>
                 <div className="listContainer">
                     <ul>
